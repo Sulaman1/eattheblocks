@@ -13,6 +13,8 @@ module.exports = async function (deployer, network, addresses) {
     await htlc.fund({from: bob});
   }
   if(network === 'binanceTestnet') {
+    await deployer.deploy(Hash);
+    const hash = await Hash.deployed();
     await deployer.deploy(Token, 'Token B', 'TKNB', {from: alice});
     const tokenB = await Token.deployed();
     await deployer.deploy(HTLC, bob, tokenB.address, 1, {from: alice});

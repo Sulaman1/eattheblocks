@@ -1,17 +1,29 @@
 const HDWalletProvider = require('@truffle/hdwallet-provider'); 
 
+//Bob
+//KETH
+// Address: 0xbad6112a29f80e0922994d6ddBd47b39eD31612C
+// Private key: 24dc391eee93304ae359e251051fa56c35d6211a1da1afdd4b1295cf30242e77
+
+//Alice
+//BNB
+// Address: 0xbad21c1193C715940e52B8d3Fe9C71BF174D4bDc
+// Private key: 98c8fa9db5b6ddd540bd18dec826b5d7a66ecbaa47cd4eb3e4f52df17d0dc1ec
+
 const kovanProvider = new HDWalletProvider({
   privateKeys: [
-    'private key of Bob here',
-    'private key of Alice here',
+    //'24dc391eee93304ae359e251051fa56c35d6211a1da1afdd4b1295cf30242e77',
+    '5f1f28027c5f010ade2436a1f6fb166b089d09ac0834d4f80eb47bd05f758b7a',
+    '98c8fa9db5b6ddd540bd18dec826b5d7a66ecbaa47cd4eb3e4f52df17d0dc1ec'
   ],
-  providerOrUrl: 'your Kovan URL' 
+  providerOrUrl: 'https://kovan.infura.io/v3/33b80616d03249baa458695ca6f348b4' 
 });
 
 const binanceProvider = new HDWalletProvider({
   privateKeys: [
-    'private key of Bob here',
-    'private key of Alice here',
+    //'24dc391eee93304ae359e251051fa56c35d6211a1da1afdd4b1295cf30242e77',
+    '5f1f28027c5f010ade2436a1f6fb166b089d09ac0834d4f80eb47bd05f758b7a',
+    '98c8fa9db5b6ddd540bd18dec826b5d7a66ecbaa47cd4eb3e4f52df17d0dc1ec'
   ],
   providerOrUrl: 'https://data-seed-prebsc-1-s1.binance.org:8545/'
 });
@@ -56,12 +68,12 @@ module.exports = {
     kovan: {
       provider: () => kovanProvider,
       network_id: "42",
-      gas: 5000000
+      //gas: 5000000
     },
     binanceTestnet: {
       provider: () => binanceProvider,
       network_id: "97", 
-      gas: 5000000
+      //gas: 5000000
     },
     // Useful for testing. The `development` name is special - truffle uses it by default
     // if it's defined here and no other network is specified at the command line.
@@ -69,11 +81,11 @@ module.exports = {
     // tab if you use this network and you must also set the `host`, `port` and `network_id`
     // options below to some value.
     //
-    // development: {
-    //  host: "127.0.0.1",     // Localhost (default: none)
-    //  port: 8545,            // Standard Ethereum port (default: none)
-    //  network_id: "*",       // Any network (default: none)
-    // },
+    development: {
+     host: "127.0.0.1",     // Localhost (default: none)
+     port: 7545,            // Standard Ethereum port (default: none)
+     network_id: "*",       // Any network (default: none)
+    },
     // Another network with more advanced options...
     // advanced: {
     // port: 8777,             // Custom port
@@ -109,7 +121,7 @@ module.exports = {
   // Configure your compilers
   compilers: {
     solc: {
-      version: "0.7.4",    // Fetch exact version from solc-bin (default: truffle's version)
+      version: "0.8.0",    // Fetch exact version from solc-bin (default: truffle's version)
       // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
       // settings: {          // See the solidity docs for advice about optimization and evmVersion
       //  optimizer: {

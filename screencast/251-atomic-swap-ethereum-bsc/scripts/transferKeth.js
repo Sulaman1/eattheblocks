@@ -1,7 +1,7 @@
 module.exports = async callback => {
   await web3.eth.sendTransaction({
-    from: '0x5d53121d43bd1E72C0e0583B1953073Eb3538FD8',
-    to: '0x83e6924B3E15ce10C131eEdf903918C7AD6C169C',
+    from: '0xbad6112a29f80e0922994d6ddBd47b39eD31612C',
+    to: '0xbad21c1193C715940e52B8d3Fe9C71BF174D4bDc',
     value: web3.utils.toWei('500', 'milli')
   });
   callback();
